@@ -27,5 +27,8 @@
       ],
       "attribute-references": []
     }
+  ],
+  "authorities": [
+    "$XSAPPNAME.viewer"
   ]
 }
