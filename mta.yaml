@@ -51,6 +51,21 @@ modules:
       supported-platforms:
         []
 
+  - name: product-catalog-app-deployer
+    type: com.sap.application.content
+    path: gen
+    requires:
+      - name: product-catalog-html5-repo-host
+        parameters:
+          content-target: true
+    build-parameters:
+      build-result: app/
+      requires:
+        - name: productcatalogproductcatalog
+          artifacts:
+            - productcatalog.zip
+          target-path: app/
+
   - name: product-catalog-destinations
     type: com.sap.application.content
     requires:

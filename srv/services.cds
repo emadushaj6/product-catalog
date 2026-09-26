@@ -3,6 +3,7 @@ using { product.catalog as db } from '../db/schema';
 @requires: 'viewer'
 service ProductCatalogService {
 
+    @odata.draft.enabled
     @restrict: [
         {
             grant: ['READ'],
@@ -16,7 +17,10 @@ service ProductCatalogService {
     @Capabilities.InsertRestrictions.Insertable: true
     @Capabilities.UpdateRestrictions.Updatable: true
     @Capabilities.DeleteRestrictions.Deletable: true
-    entity Products as projection on db.Products;
+    entity Products as projection on db.Products{
+        *,
+        virtual null as priceCategory : String
+    };
 
 
     @restrict: [
