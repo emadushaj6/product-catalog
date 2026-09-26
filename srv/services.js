@@ -12,6 +12,8 @@ module.exports = cds.service.impl(function () {
 
         if (req.data.price > 500) {
             req.data.premium = true;
+        } else {
+            req.data.premium = false;
         }
 
     });
